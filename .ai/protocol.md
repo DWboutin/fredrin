@@ -53,6 +53,21 @@ Checkboxes stay truthful. Tick only when the work is finished and verified.
 
 Never edit a file another agent owns. Open a task in that agent's folder instead.
 
+## Coding standards
+
+[vault/knowledge/coding-standards.md](../vault/knowledge/coding-standards.md) applies to all application code. It is
+the source of truth; never restate or paraphrase its rules elsewhere.
+
+- **Builders** read it in full before writing or changing application code, and apply every rule.
+- **Checkers** read it in full before a verdict. A broken rule with no written exception is a **BLOCKER**.
+  code-reviewer checks sections 1 to 4, 7 and 8; qa checks sections 5 and 6; each cites the section in the finding.
+- **Every rule is either enforced by a tool or checked in review**, per the document's Enforcement table. Where the
+  named tool is not set up yet, the rule is checked in review.
+- **A rule that cannot be followed needs a written exception in the pull request**: the rule, the reason, the scope.
+  No exception, no merge.
+- **A UI component is done only when** the "Definition of done for a UI component" at the end of the document is
+  met. This comes on top of the Definition of Done below.
+
 ## Blockers first
 
 A builder fixes any BLOCKER filed on its work before new work.
