@@ -12,4 +12,4 @@ re-judged: a change is a new decision that amends the old one.
 
 | ID | Decision | Status |
 |---|---|---|
-| _none yet_ | | |
+| [[0001-adopt-coding-standards]] | Adopt the coding standards for all application code | decided |

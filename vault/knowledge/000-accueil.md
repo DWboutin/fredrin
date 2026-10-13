@@ -12,4 +12,4 @@ What stays true about the project: product brief, design reference, pricing, mar
 
 | File | What it holds |
 |---|---|
-| _none yet_ | |
+| [[coding-standards]] | Coding standards for all application code: eight sections, the enforcement table and the definition of done for a UI component. |
