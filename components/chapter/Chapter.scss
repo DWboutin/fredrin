@@ -1,0 +1,70 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/motion' as *;
+
+.chapter {
+  display: grid;
+  gap: $space-6;
+  max-width: $content-max;
+  margin-inline: auto;
+  padding: $space-9 $gutter;
+
+  @media (min-width: $bp-lg) {
+    grid-template-columns: 1fr 2fr;
+    gap: $space-8;
+    align-items: start;
+  }
+
+  &__head {
+    position: relative;
+
+    // the heading stays in view while its chapter scrolls past
+    @media (min-width: $bp-lg) and (min-height: $bp-tall) {
+      position: sticky;
+      top: $space-8;
+    }
+  }
+
+  &__index {
+    color: $color-clear;
+    font-family: $font-sans;
+    font-size: $font-size-display;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    -webkit-text-stroke: $border-thin $color-line;
+
+    @include scroll-driven {
+      animation: chapter-drift linear both;
+      animation-timeline: view();
+    }
+  }
+
+  &__label {
+    margin-top: $space-4;
+    color: $color-accent;
+    font-family: $font-mono;
+    font-size: $font-size-sm;
+    letter-spacing: $tracking-wide;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-top: $space-3;
+    font-size: $font-size-xl;
+    line-height: $line-height-heading;
+    letter-spacing: $tracking-tight;
+
+    @include reveal-on-scroll;
+  }
+
+  &__body {
+    display: grid;
+    gap: $space-7;
+    min-width: 0;
+  }
+}
+
+@keyframes chapter-drift {
+  from {
+    transform: translateY(-$shift-md);
+  }
+}

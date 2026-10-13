@@ -13,3 +13,4 @@ re-judged: a change is a new decision that amends the old one.
 | ID | Decision | Status |
 |---|---|---|
 | [[0001-adopt-coding-standards]] | Adopt the coding standards for all application code | decided |
+| [[0002-about-page-lighthouse-direction]] | About me page: "Lighthouse" direction, home route, no phone number | decided |

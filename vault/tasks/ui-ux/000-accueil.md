@@ -11,4 +11,4 @@ Work for `ui-ux`. Other agents open tasks here instead of editing its files.
 
 | File | Task in one line | Status |
 |---|---|---|
-| _none yet_ | | |
+| [[2026-10-13-about-page-lighthouse]] | Build the About me page in the Lighthouse direction | open |

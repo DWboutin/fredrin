@@ -1,0 +1,35 @@
+@use '../styles/tokens' as *;
+@use '../styles/motion' as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  color-scheme: dark;
+
+  @include motion-safe {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  // clip, not hidden: hidden turns body into a scroll container and breaks sticky scenes
+  overflow-x: clip;
+  color: $color-text;
+  background: $color-bg;
+  font-family: $font-sans;
+  font-size: $font-size-md;
+  line-height: $line-height-body;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY($shift-sm);
+  }
+}

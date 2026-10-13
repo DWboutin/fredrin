@@ -1,0 +1,214 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/motion' as *;
+
+// Styles describe the final state (score reached). Motion only adds the way there.
+$score-scene-steps: 8;
+
+// In flow, the dial plays as it crosses the viewport; pinned, it follows the scene.
+@mixin dial-motion($name) {
+  @include scroll-driven {
+    animation: $name linear both;
+    animation-timeline: view();
+    animation-range: cover 15% cover 50%;
+  }
+
+  @include pinned {
+    animation-timeline: --score-scene;
+    animation-range: contain 0% contain 60%;
+  }
+}
+
+.score-scene {
+  padding: $space-9 $gutter;
+  border-block: $border-thin solid $color-line;
+  background: $color-surface;
+
+  @include pinned {
+    height: $scene-length;
+    padding-block: 0;
+    view-timeline-name: --score-scene;
+  }
+
+  &__stage {
+    display: grid;
+    gap: $space-7;
+    align-items: center;
+    max-width: $content-max;
+    margin-inline: auto;
+
+    @media (min-width: $bp-lg) {
+      grid-template-columns: auto 1fr;
+      gap: $space-8;
+    }
+
+    @include pinned {
+      position: sticky;
+      top: 0;
+      min-height: $viewport;
+    }
+  }
+
+  &__dial {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: $dial-size;
+    aspect-ratio: 1;
+    margin-inline: auto;
+  }
+
+  &__rings {
+    position: absolute;
+    inset: 0;
+    transform: rotate(-0.25turn);
+  }
+
+  &__ring {
+    fill: none;
+    stroke: $color-line;
+    stroke-width: $border-thick;
+
+    &--before {
+      opacity: 0;
+      stroke: $color-before;
+
+      @include dial-motion(score-scene-fade-out);
+    }
+
+    &--after {
+      stroke: $color-accent;
+
+      @include dial-motion(score-scene-fade-in);
+    }
+  }
+
+  &__score {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: $space-2;
+  }
+
+  &__window {
+    display: block;
+    height: 1em;
+    overflow: hidden;
+    font-family: $font-sans;
+    font-size: $font-size-score;
+    font-weight: $font-weight-bold;
+    font-variant-numeric: tabular-nums;
+    line-height: $line-height-tight;
+    letter-spacing: $tracking-tight;
+  }
+
+  &__strip {
+    display: block;
+    transform: translateY(calc(-100% + 1em));
+
+    @include dial-motion(score-scene-roll);
+  }
+
+  &__digit {
+    display: block;
+    height: 1em;
+    text-align: center;
+  }
+
+  &__caption {
+    color: $color-text-muted;
+    font-family: $font-mono;
+    font-size: $font-size-xs;
+    letter-spacing: $tracking-wide;
+    text-transform: uppercase;
+  }
+
+  &__sr {
+    @include visually-hidden;
+  }
+
+  &__label {
+    color: $color-accent;
+    font-family: $font-mono;
+    font-size: $font-size-sm;
+    letter-spacing: $tracking-wide;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-block: $space-3 $space-4;
+    font-size: $font-size-xl;
+    line-height: $line-height-heading;
+    letter-spacing: $tracking-tight;
+  }
+
+  &__intro {
+    max-width: $measure;
+    color: $color-text-muted;
+  }
+
+  &__metrics {
+    display: grid;
+    margin-top: $space-5;
+  }
+
+  &__metric {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-1 $space-5;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-block: $space-3;
+    border-top: $border-thin solid $color-line;
+
+    @include reveal-on-scroll;
+  }
+
+  // Pinned, the metrics land one after the other as the scene is scrolled.
+  @for $step from 1 through $score-scene-steps {
+    &__metric--step-#{$step} {
+      @include pinned {
+        animation-timeline: --score-scene;
+        animation-range: contain (($step - 1) * 10% + 5%) contain (($step - 1) * 10% + 20%);
+      }
+    }
+  }
+
+  &__value {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 $space-3;
+    font-family: $font-mono;
+    font-size: $font-size-sm;
+  }
+
+  &__before {
+    color: $color-before;
+    text-decoration: line-through;
+  }
+
+  &__after {
+    font-weight: $font-weight-bold;
+  }
+
+  &__change {
+    color: $color-accent;
+  }
+}
+
+@keyframes score-scene-roll {
+  from {
+    transform: none;
+  }
+}
+
+@keyframes score-scene-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes score-scene-fade-out {
+  from {
+    opacity: 1;
+  }
+}
