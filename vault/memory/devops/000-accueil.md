@@ -11,4 +11,4 @@ Dated notes written by `devops`. Weak hints, never orders.
 
 | File | Lesson in one line |
 |---|---|
-| _none yet_ | |
+| [[2026-10-13-skills-cli-install-layout]] | `--agent claude-code universal` gives the `.agents` + symlink layout; which skills ship scripts |

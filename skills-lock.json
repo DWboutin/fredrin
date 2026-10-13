@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "skills": {
+    "animation-vocabulary": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/animation-vocabulary/SKILL.md",
+      "computedHash": "0058036865ecbb864fd0c4132efcc62425355d6e99c7e6ef6a936742d62a5dea"
+    },
+    "brandkit": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/brandkit/SKILL.md",
+      "computedHash": "4bf33908992cde092395205122fad7a59e117190292bc8847cdba324b6f1c5b2"
+    },
+    "cast": {
+      "source": "AThevon/genjutsu",
+      "sourceType": "github",
+      "skillPath": "skills/cast/SKILL.md",
+      "computedHash": "d0e729b7d492a328682119bbf5b343cff3006f47f9e76748deb1889e3af70842"
+    },
+    "design-audit": {
+      "source": "AThevon/genjutsu",
+      "sourceType": "github",
+      "skillPath": "skills/_jutsu/design-audit/SKILL.md",
+      "computedHash": "9cf24917a98fb293e4302b31f785c77e2bda1803c810f791d96ee8e2e34529d9"
+    },
+    "design-dna": {
+      "source": "zanwei/design-dna",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "241a98aa785985e55b966fb16312e84cc533574e3b14b981689d17ea867aa1cc"
+    },
+    "design-taste-frontend": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill/SKILL.md",
+      "computedHash": "18f81679d2b0247ce9da298b03ed8e47ecd3c206f2951d70eefb1b65d3219345"
+    },
+    "design-taste-frontend-v1": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/taste-skill-v1/SKILL.md",
+      "computedHash": "c6746fba186bed90e57923b80454984ad45126ae0e585c00ceaa7f96657911b7"
+    },
+    "desktop-principles": {
+      "source": "AThevon/genjutsu",
+      "sourceType": "github",
+      "skillPath": "skills/_jutsu/desktop-principles/SKILL.md",
+      "computedHash": "e2e83e56a4d800fc0eb066a777d067b2eb22132ba995e2caba5add9f0e6063f4"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "computedHash": "51f2537e04d15911b41d78e2de24c36a0e26d41beae15e82a954fe5496a5eda9"
+    },
+    "gpt-taste": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/gpt-tasteskill/SKILL.md",
+      "computedHash": "a7517d2f71baa638a57ffdba2d712f9debddda96c9a8f264006e64c2a9cca1f5"
+    },
+    "high-end-visual-design": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/soft-skill/SKILL.md",
+      "computedHash": "7db385e4c5370e5a7fca9704a1361b056e4504ea6a03924bb86f33a4f00b5c73"
+    },
+    "image-to-code": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/image-to-code-skill/SKILL.md",
+      "computedHash": "58517b03b2a01f4c9ba65861559d03df931400871bbc200978c975b24bb92c73"
+    },
+    "imagegen-frontend-web": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/imagegen-frontend-web/SKILL.md",
+      "computedHash": "65f5ae59fa317567809438310b1c54f78cd133426deb43e4d3d4ca4c8f541628"
+    },
+    "improve-animations": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/improve-animations/SKILL.md",
+      "computedHash": "524ea241e41d58bbdd8e288700fe24f5725e2a2f3ae7186ad7cebf9055058356"
+    },
+    "industrial-brutalist-ui": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/brutalist-skill/SKILL.md",
+      "computedHash": "8fc355c4aadb7d29c53ca28bc41be3cd6eea765d121e3737c4dc2d0f90a8effa"
+    },
+    "minimalist-ui": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/minimalist-skill/SKILL.md",
+      "computedHash": "b201c0763796192405cfed7933b55e3dab6d530ca7f06a5e8095063d476635d7"
+    },
+    "mobile-principles": {
+      "source": "AThevon/genjutsu",
+      "sourceType": "github",
+      "skillPath": "skills/_jutsu/mobile-principles/SKILL.md",
+      "computedHash": "e9810da0bbe9e2369e4190186c83b4b4581093a34c8d94b6a0ec8a62bb7d5057"
+    },
+    "motion-design": {
+      "source": "LottieFiles/motion-design-skill",
+      "sourceType": "github",
+      "skillPath": "skills/motion-design/SKILL.md",
+      "computedHash": "9fcf9130cc46ee8fd1d8e09a9263347a9d76efbcbfa46591cc4cefaf19bbb453"
+    },
+    "motion-principles": {
+      "source": "AThevon/genjutsu",
+      "sourceType": "github",
+      "skillPath": "skills/_jutsu/motion-principles/SKILL.md",
+      "computedHash": "c9c431afeb4cc2b4d815496dfc8666f905c3a7a2e35665e73af7daf897a11f0d"
+    },
+    "paint": {
+      "source": "AThevon/genjutsu",
+      "sourceType": "github",
+      "skillPath": "skills/paint/SKILL.md",
+      "computedHash": "224379a9961c5f912ce32f6cd7dd0e87b8cddca89a7c24ce97a503b2345566cc"
+    },
+    "ponytail": {
+      "source": "DietrichGebert/ponytail",
+      "sourceType": "github",
+      "skillPath": "skills/ponytail/SKILL.md",
+      "computedHash": "99f0589e5646b46da07b9419a5daa178004b3dd8930fec528918a51ab07f5efc"
+    },
+    "prototype": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/prototype/SKILL.md",
+      "computedHash": "d3fc74689bd993e39c44bfae510d014eecffbeec2922764b065377fd1327c0f6"
+    },
+    "redesign-existing-projects": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/redesign-skill/SKILL.md",
+      "computedHash": "52f2ade5449b7005942ebd221e53808a245b3e088ff096c44a374e1e481e9f6b"
+    },
+    "review-animations": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/review-animations/SKILL.md",
+      "computedHash": "b4e5f0f4fe3e2743c85bf7354108f48a0b9d502cb20ef5c4a9c195da91f93736"
+    },
+    "stitch-design-taste": {
+      "source": "Leonxlnx/taste-skill",
+      "sourceType": "github",
+      "skillPath": "skills/stitch-skill/SKILL.md",
+      "computedHash": "13322f38406cd3abf16ba45e35bdc9b18002d0153a79b4612b97aefc65d5a335"
+    },
+    "typeui-fundamentals": {
+      "source": "bergside/typeui",
+      "sourceType": "github",
+      "skillPath": "skills/fundamentals/SKILL.md",
+      "computedHash": "86d37fb3dac5cf197bed8d2efd0e2e3e67c372a62347f2639a9e8d88ba05e793"
+    },
+    "ui-ux-pro-max": {
+      "source": "AThevon/genjutsu",
+      "sourceType": "github",
+      "skillPath": "skills/_jutsu/ui-ux-pro-max/SKILL.md",
+      "computedHash": "fc84f6f1fa9695edf9545813e21db36df6f1067b69c0db38c23bd79da1685142"
+    }
+  }
+}
