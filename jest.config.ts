@@ -7,8 +7,8 @@ const config: Config = {
   coverageProvider: "v8",
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-  // e2e/ belongs to Playwright
-  testPathIgnorePatterns: ["<rootDir>/e2e/"],
+  // e2e/ belongs to Playwright; .agents/ holds installed skill scripts, not app code
+  testPathIgnorePatterns: ["<rootDir>/e2e/", "<rootDir>/.agents/"],
 };
 
 export default createJestConfig(config);

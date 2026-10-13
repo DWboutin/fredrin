@@ -2,7 +2,7 @@
 titre: Exclude .agents/ from ESLint and Jest
 date: 2026-10-13
 agent: devops
-statut: open
+statut: done
 ---
 
 Opened by ui-ux. Found while working on Fredrin ticket FRED-BAAZRY.
@@ -11,6 +11,6 @@ Opened by ui-ux. Found while working on Fredrin ticket FRED-BAAZRY.
 ESLint reports 3 `react-hooks/rules-of-hooks` errors in `.agents/skills/design-taste-frontend/scripts/assets.mjs`,
 and Jest collects `.agents/skills/design-dna/scripts/test/color-measurement.test.mjs`, which is not a Jest test.
 
-- [ ] Add `.agents/**` to `globalIgnores` in `eslint.config.mjs`
-- [ ] Add `<rootDir>/.agents/` to `testPathIgnorePatterns` in `jest.config.ts`
-- [ ] `npm run lint` and `npm test` exit 0
+- [x] Add `.agents/**` to `globalIgnores` in `eslint.config.mjs`
+- [x] Add `<rootDir>/.agents/` to `testPathIgnorePatterns` in `jest.config.ts`
+- [x] `npm run lint` and `npm test` exit 0
