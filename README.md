@@ -25,11 +25,13 @@ npx playwright install chromium
 |---|---|
 | `npm run dev` | Dev server on http://localhost:3000 |
 | `npm run build` | Production build |
+| `npm start` | Serve the production build on http://localhost:3000 (run `npm run build` first) |
 | `npm run lint` | ESLint |
 | `npm run typecheck` | Generate route types, then `tsc --noEmit` |
 | `npm test` | Jest |
 | `npm run test:e2e` | Playwright (starts the dev server itself) |
 | `npm run storybook` | Storybook on http://localhost:6006 |
+| `npm run build-storybook` | Static Storybook build in `storybook-static/` |
 
 ## Vault and agent team
 
