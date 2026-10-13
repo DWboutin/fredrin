@@ -1,0 +1,48 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/motion' as *;
+
+.experience-entry {
+  padding-left: $space-5;
+  border-left: $border-thin solid $color-line;
+
+  &__role {
+    font-size: $font-size-lg;
+    line-height: $line-height-heading;
+
+    @include reveal-on-scroll;
+  }
+
+  &__company {
+    color: $color-accent;
+  }
+
+  &__period {
+    margin-top: $space-2;
+    color: $color-text-muted;
+    font-family: $font-mono;
+    font-size: $font-size-sm;
+  }
+
+  &__context {
+    margin-top: $space-2;
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+    font-style: italic;
+  }
+
+  &__list {
+    display: grid;
+    gap: $space-3;
+    max-width: $measure;
+    margin-top: $space-5;
+    padding-left: $space-5;
+  }
+
+  &__item {
+    @include reveal-on-scroll;
+
+    &::marker {
+      color: $color-accent;
+    }
+  }
+}

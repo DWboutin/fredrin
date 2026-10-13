@@ -1,0 +1,230 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/motion' as *;
+
+// Parallax: each layer travels a different distance over the first viewport of scroll.
+@mixin parallax($name) {
+  @include scroll-driven {
+    animation: $name linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 $viewport;
+  }
+}
+
+.profile-hero {
+  position: relative;
+  display: grid;
+  min-height: $viewport-small;
+  padding: $space-8 $gutter $space-6;
+  overflow: clip;
+
+  &__grid {
+    position: absolute;
+    inset: 0;
+    z-index: $z-back;
+    background-image:
+      linear-gradient($color-line $border-thin, $color-clear $border-thin),
+      linear-gradient(90deg, $color-line $border-thin, $color-clear $border-thin);
+    background-size: $grid-size $grid-size;
+    mask-image: radial-gradient(ellipse at 70% 40%, $color-bg, $color-clear 70%);
+
+    @include parallax(profile-hero-rise-sm);
+  }
+
+  &__glow {
+    position: absolute;
+    inset: 0;
+    z-index: $z-back;
+    background: radial-gradient(circle at 72% 42%, $color-glow, $color-clear 55%);
+
+    @include parallax(profile-hero-sink-md);
+  }
+
+  &__ghost {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: $z-back;
+    color: $color-clear;
+    font-family: $font-sans;
+    font-size: $font-size-ghost;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    letter-spacing: $tracking-tight;
+    -webkit-text-stroke: $border-thin $color-line;
+
+    @include parallax(profile-hero-rise-lg);
+  }
+
+  &__layout {
+    position: relative;
+    z-index: $z-content;
+    display: grid;
+    gap: $space-7;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: $content-max;
+    margin-inline: auto;
+
+    @media (min-width: $bp-lg) {
+      grid-template-columns: 1fr auto;
+    }
+  }
+
+  &__content {
+    @include parallax(profile-hero-rise-sm);
+  }
+
+  &__eyebrow {
+    color: $color-accent;
+    font-family: $font-mono;
+    font-size: $font-size-sm;
+    letter-spacing: $tracking-wide;
+    text-transform: uppercase;
+
+    @include enter(0);
+  }
+
+  &__name {
+    margin-block: $space-3 $space-5;
+    font-size: $font-size-display;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    letter-spacing: $tracking-tight;
+
+    @include enter(1);
+  }
+
+  &__role {
+    max-width: $measure;
+    font-size: $font-size-lg;
+    line-height: $line-height-heading;
+
+    @include enter(2);
+  }
+
+  &__location {
+    margin-top: $space-3;
+    color: $color-text-muted;
+    font-family: $font-mono;
+    font-size: $font-size-sm;
+
+    @include enter(3);
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: $target-min;
+    margin-top: $space-6;
+    padding-inline: $space-5;
+    border-radius: $radius-pill;
+    color: $color-bg;
+    background: $color-accent;
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+    transition: transform $duration-fast $ease-out;
+
+    @include enter(4);
+
+    &:hover {
+      transform: translateY(-$shift-xs);
+    }
+
+    &:active {
+      transform: none;
+    }
+
+    &:focus-visible {
+      outline: $focus-ring;
+      outline-offset: $focus-offset;
+    }
+  }
+
+  &__portrait {
+    position: relative;
+    order: -1;
+    width: $portrait-size;
+    aspect-ratio: 1;
+    margin: $space-4;
+
+    @include parallax(profile-hero-rise-md);
+
+    @media (min-width: $bp-lg) {
+      order: 0;
+    }
+  }
+
+  &__ring {
+    position: absolute;
+    inset: -$space-4;
+    border-radius: $radius-round;
+    // an open arc: 88% of the circle, the starting Lighthouse score
+    background: conic-gradient($color-accent 88%, $color-line 0);
+    mask-image: radial-gradient(
+      farthest-side,
+      $color-clear calc(100% - #{$border-thick}),
+      $color-bg calc(100% - #{$border-thick})
+    );
+
+    @include parallax(profile-hero-turn);
+  }
+
+  &__photo {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius-round;
+    object-fit: cover;
+
+    @include enter(2);
+  }
+
+  &__cue {
+    position: relative;
+    z-index: $z-content;
+    align-self: end;
+    width: 100%;
+    max-width: $content-max;
+    margin-inline: auto;
+    padding-top: $space-6;
+    color: $color-text-muted;
+    font-family: $font-mono;
+    font-size: $font-size-xs;
+    letter-spacing: $tracking-wide;
+    text-transform: uppercase;
+
+    @include enter(6);
+  }
+}
+
+@keyframes profile-hero-rise-sm {
+  to {
+    transform: translateY(-$shift-sm);
+  }
+}
+
+@keyframes profile-hero-rise-md {
+  to {
+    transform: translateY(-$shift-md);
+  }
+}
+
+@keyframes profile-hero-rise-lg {
+  to {
+    transform: translateY(-$shift-lg);
+  }
+}
+
+@keyframes profile-hero-sink-md {
+  to {
+    transform: translateY($shift-md);
+  }
+}
+
+@keyframes profile-hero-turn {
+  to {
+    transform: rotate(0.5turn);
+  }
+}

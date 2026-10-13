@@ -1,0 +1,52 @@
+@use 'tokens' as *;
+
+// Without scroll-driven animation support, or under reduced motion, nothing
+// inside these mixins applies and the page stays in its final, static state.
+
+@mixin motion-safe {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin scroll-driven {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      @content;
+    }
+  }
+}
+
+// A scene pinned for the length of its scroll range. Small or short viewports
+// keep normal flow so content still reflows at 320px and 200% zoom.
+@mixin pinned {
+  @media (prefers-reduced-motion: no-preference) and (min-width: $bp-lg) and (min-height: $bp-tall) {
+    @supports (animation-timeline: view()) {
+      @content;
+    }
+  }
+}
+
+// Keyframes live in app/globals.scss.
+@mixin reveal-on-scroll {
+  @include scroll-driven {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
+
+@mixin enter($order: 0) {
+  @include motion-safe {
+    animation: reveal-up $duration-slow $ease-out ($stagger * $order) both;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: $border-thin;
+  height: $border-thin;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
